@@ -207,7 +207,6 @@ namespace CAH
 
     private void pushToClients(byte[] input)
     {
-        input[0] = 8;
         List<TcpClient> list = new List<TcpClient>(clients.Keys);
         foreach (TcpClient client in list)
         {

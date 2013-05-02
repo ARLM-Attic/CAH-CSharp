@@ -108,13 +108,13 @@ namespace CAH
                     case 8:
                         Debug.WriteLine(encoder.GetString(message, 1, bytesRead - 1));
                         setCardFromString(encoder.GetString(message, 1, bytesRead - 1));
-                        recivedDeckCard.Invoke(this, EventArgs.Empty);
+                        recivedDeckCard(this, EventArgs.Empty);
                         break;
                     case 4:
-                        needToFlipCards.Invoke(this, EventArgs.Empty);
+                        needToFlipCards(this, EventArgs.Empty);
                         break;
                     case 5:
-                        playerAdded.Invoke(this, encoder.GetString(message, 1, bytesRead - 1));
+                        playerAdded(this, encoder.GetString(message, 1, bytesRead - 1));
                         break;
                     case 6:
                         Debug.WriteLine("the game was started");

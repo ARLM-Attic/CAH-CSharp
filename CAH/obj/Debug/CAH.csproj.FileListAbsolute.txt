@@ -22,3 +22,15 @@ C:\Users\200203195\Dropbox\classes\APCS\c#\CAH\CAH\obj\Debug\CAH.Properties.Reso
 C:\Users\200203195\Dropbox\classes\APCS\c#\CAH\CAH\obj\Debug\CAH.csproj.GenerateResource.Cache
 C:\Users\200203195\Dropbox\classes\APCS\c#\CAH\CAH\obj\Debug\CAH.ipInput.resources
 C:\Users\Alex\Dropbox\classes\APCS\c#\CAH\CAH\obj\Debug\CAH.ipInput.resources
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\bin\Debug\CAH.exe.config
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.exe
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.pdb
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\bin\Debug\CAH.exe
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\bin\Debug\CAH.pdb
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.csprojResolveAssemblyReference.cache
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.Card.resources
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.Form1.resources
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.InputDialog.resources
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.ipInput.resources
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.Properties.Resources.resources
+C:\Program Files (x86)\SmartGitHg 4\bin\CAH\CAH\obj\Debug\CAH.csproj.GenerateResource.Cache
