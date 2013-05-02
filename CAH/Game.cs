@@ -86,6 +86,7 @@ namespace CAH
                 foreach (String s in players.Keys)
                 {
                     c.sendACard(s,WhiteCardDeck.First());
+                    WhiteCardDeck.Remove(WhiteCardDeck.First());
                     
 
                 }
