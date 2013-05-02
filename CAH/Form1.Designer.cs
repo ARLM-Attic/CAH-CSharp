@@ -61,10 +61,13 @@
             // 
             // playerCards
             // 
-            this.playerCards.Location = new System.Drawing.Point(26, 150);
+            this.playerCards.AutoScroll = true;
+            this.playerCards.AutoScrollMinSize = new System.Drawing.Size(1000, 0);
+            this.playerCards.Location = new System.Drawing.Point(26, 128);
             this.playerCards.Name = "playerCards";
-            this.playerCards.Size = new System.Drawing.Size(332, 100);
+            this.playerCards.Size = new System.Drawing.Size(571, 122);
             this.playerCards.TabIndex = 2;
+            this.playerCards.WrapContents = false;
             this.playerCards.Paint += new System.Windows.Forms.PaintEventHandler(this.playerCards_Paint);
             // 
             // menuStrip1
@@ -127,7 +130,7 @@
             // 
             // VisualUpdater
             // 
-            this.VisualUpdater.Interval = 5000;
+            this.VisualUpdater.Interval = 500;
             this.VisualUpdater.Tick += new System.EventHandler(this.VisualUpdater_Tick);
             // 
             // Form1

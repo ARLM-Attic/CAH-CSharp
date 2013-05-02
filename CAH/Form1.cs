@@ -53,6 +53,9 @@ namespace CAH
                 playerCards.Controls.Add(card);
                 i++;
             }
+            Debug.WriteLine(i);
+            Update();
+            Refresh();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

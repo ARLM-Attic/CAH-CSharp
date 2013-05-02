@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
@@ -86,6 +87,7 @@ namespace CAH
                 foreach (String s in players.Keys)
                 {
                     c.sendACard(s.Trim(),WhiteCardDeck.First());
+                    Thread.Sleep(500);
                     WhiteCardDeck.Remove(WhiteCardDeck.First());
                     
 
