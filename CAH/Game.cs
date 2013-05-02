@@ -68,7 +68,7 @@ namespace CAH
 
         public void addPlayer(String name)
         {
-           
+            name = name.TrimEnd('\0');
             players.Add(name, 0);
             Debug.WriteLine("player" + name + " has joined the game, there are now " + players.Count + " players in the game");
         }
@@ -85,7 +85,7 @@ namespace CAH
             {
                 foreach (String s in players.Keys)
                 {
-                    c.sendACard(s,WhiteCardDeck.First());
+                    c.sendACard(s.Trim(),WhiteCardDeck.First());
                     WhiteCardDeck.Remove(WhiteCardDeck.First());
                     
 

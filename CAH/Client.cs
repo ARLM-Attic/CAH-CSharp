@@ -101,12 +101,10 @@ namespace CAH
                 switch (message[0])
                 {
                     case 9:
-                        Debug.WriteLine(encoder.GetString(message, 1, bytesRead - 1));
                         setCardFromString(encoder.GetString(message,1,bytesRead-1));
-                        recivedWhiteCard.Invoke(this, EventArgs.Empty);
+                        recivedWhiteCard(this, EventArgs.Empty);
                         break;
                     case 8:
-                        Debug.WriteLine(encoder.GetString(message, 1, bytesRead - 1));
                         setCardFromString(encoder.GetString(message, 1, bytesRead - 1));
                         recivedDeckCard(this, EventArgs.Empty);
                         break;

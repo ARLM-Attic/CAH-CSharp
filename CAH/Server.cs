@@ -99,7 +99,7 @@ namespace CAH
         else
         {
 
-            clients.Add(tcpClient, name);
+            clients.Add(tcpClient, name.TrimEnd('\0'));
             message[0] = 5;
             informGameOfNewPlayer(message);
         }
@@ -221,13 +221,14 @@ namespace CAH
 
     private void sendToSpecificClient(String name, byte[] message,int bytestosend)
     {
-        message[0] = 30;
+        message[0] = 9;
         var list = new List<String>(clients.Values);
         int listlocation = -1,counter=0;
+       name= name.Trim();
         foreach (String s in list)
         {
 
-            if (s.Equals(name))
+            if (s.Equals(name.TrimEnd('\0')))
             {
                 listlocation = counter;
                 break;

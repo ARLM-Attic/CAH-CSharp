@@ -16,7 +16,7 @@ namespace CAH
     public partial class Form1 : Form
     {
         ////////Fields\\\\\\\\
-        private Player player;
+        private Player player=new Player("tester");
         private String userName = "";
         private Game game = null;
         public Form1()
@@ -26,7 +26,7 @@ namespace CAH
 
             new InputDialog("Username", this).Show();
             WindowState = FormWindowState.Minimized;
-            
+            playerCards.Controls.Add(new Card("test",false));
 
         }
 
@@ -37,6 +37,7 @@ namespace CAH
             WindowState = FormWindowState.Normal;
             player = new Player(userName);
             player.cardChange += player_cardChange;
+            VisualUpdater.Start();
         }
 
         void player_cardChange(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace CAH
 
         private void doCards()
         {
-            int i = 0;
+            int i = playerCards.Controls.Count;
             foreach(Card card in player.getCards()){
                 card.setPostion(i * Card.WIDTH, 0);
                 playerCards.Controls.Add(card);
@@ -80,6 +81,11 @@ namespace CAH
         private void startGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             game.startGame();
+        }
+
+        private void VisualUpdater_Tick(object sender, EventArgs e)
+        {
+            doCards();
         }
 
         

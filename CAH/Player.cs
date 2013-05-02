@@ -37,12 +37,13 @@ namespace CAH
 
         public void givePlayerCard(Card c)
         {
-            cardChange.Invoke(this, EventArgs.Empty);
+           
             cardsInHand.Add(c);
             if(c != null)
             c.onSelected += c_onSelected;
             if (new Random().NextDouble() > .5)
                 c.flip();
+            //cardChange(this, EventArgs.Empty);
         }
 
 

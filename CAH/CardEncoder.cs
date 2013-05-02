@@ -28,7 +28,7 @@ namespace CAH
             String[] strings = s.Split(',');
             try
             {
-                c = new Card(strings[1], strings[0].Equals("Black"));
+                c = new Card(strings[1].TrimEnd('\0'), strings[0].Equals("Black"));
             }
             catch (Exception ex)
             {

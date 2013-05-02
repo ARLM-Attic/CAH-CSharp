@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.GameCards = new System.Windows.Forms.FlowLayoutPanel();
             this.playerCards = new System.Windows.Forms.FlowLayoutPanel();
@@ -38,6 +39,7 @@
             this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beTheServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VisualUpdater = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,7 +113,7 @@
             // beTheServerToolStripMenuItem
             // 
             this.beTheServerToolStripMenuItem.Name = "beTheServerToolStripMenuItem";
-            this.beTheServerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beTheServerToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.beTheServerToolStripMenuItem.Text = "be the server";
             this.beTheServerToolStripMenuItem.Click += new System.EventHandler(this.beTheServerToolStripMenuItem_Click);
             // 
@@ -119,9 +121,14 @@
             // 
             this.startGameToolStripMenuItem.Enabled = false;
             this.startGameToolStripMenuItem.Name = "startGameToolStripMenuItem";
-            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startGameToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.startGameToolStripMenuItem.Text = "start game";
             this.startGameToolStripMenuItem.Click += new System.EventHandler(this.startGameToolStripMenuItem_Click);
+            // 
+            // VisualUpdater
+            // 
+            this.VisualUpdater.Interval = 5000;
+            this.VisualUpdater.Tick += new System.EventHandler(this.VisualUpdater_Tick);
             // 
             // Form1
             // 
@@ -155,6 +162,7 @@
         private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beTheServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem startGameToolStripMenuItem;
+        private System.Windows.Forms.Timer VisualUpdater;
     }
 }
 
