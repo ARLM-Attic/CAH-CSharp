@@ -43,6 +43,7 @@ namespace CAH
             c.onSelected += c_onSelected;
             if (new Random().NextDouble() > .5)
                 c.flip();
+            cardChange.Invoke(this, EventArgs.Empty);
         }
 
 

@@ -19,6 +19,7 @@ namespace CAH
         private Player player=new Player("tester");
         private String userName = "";
         private Game game = null;
+        private bool needToUpdate = false;
         public Form1()
         {
            
@@ -42,7 +43,7 @@ namespace CAH
 
         void player_cardChange(object sender, EventArgs e)
         {
-            doCards();
+            needToUpdate = true;
         }
 
         private void doCards()
@@ -56,6 +57,7 @@ namespace CAH
             Debug.WriteLine(i);
             Update();
             Refresh();
+            needToUpdate = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,6 +90,7 @@ namespace CAH
 
         private void VisualUpdater_Tick(object sender, EventArgs e)
         {
+            if(needToUpdate)
             doCards();
         }
 
