@@ -90,6 +90,7 @@ namespace CAH
 
         private void VisualUpdater_Tick(object sender, EventArgs e)
         {
+            
             if(needToUpdate)
             doCards();
         }

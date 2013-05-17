@@ -7,6 +7,7 @@ using System.Threading;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using System.Timers;
 
 namespace CAH
 {
@@ -15,6 +16,9 @@ namespace CAH
         private List<Card> WhiteCardDeck=new List<Card>(),BlackCardDeck=new List<Card>();
         private Dictionary<string,int> players = new Dictionary<string,int>();
         private Server server = new Server();
+        private System.Timers.Timer dealer;
+        public static readonly int NUM_CARDS_PER_PLAYER = 7;
+        private int current_card=0;
         Client c;
 
         public Game()
@@ -25,6 +29,13 @@ namespace CAH
             c.playerAdded += c_playerAdded;
             setupDecks();
             shuffleDecks();
+            dealer = new System.Timers.Timer(1000);
+            dealer.Elapsed += dealer_Elapsed;
+        }
+
+        void dealer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            deal();
         }
 
         void c_playerAdded(object sender, String e)
@@ -82,22 +93,24 @@ namespace CAH
 
         public void deal()
         {
-            for (int i = 0; i < 7; i++)
-            {
+            
                 foreach (String s in players.Keys)
                 {
-                    c.sendACard(s.Trim(),WhiteCardDeck.First());
-                    Thread.Sleep(500);
-                    WhiteCardDeck.Remove(WhiteCardDeck.First());
+                    Card card =WhiteCardDeck.First();
+                    c.sendACard(s.Trim(),card);
+                    WhiteCardDeck.Remove(card);
+                    Debug.WriteLine("Card # " + current_card+"    "+card.getText());
                     
 
                 }
-            }
+                current_card++;
+                if (current_card == NUM_CARDS_PER_PLAYER)
+                    dealer.Stop();
         }
 
         public void startGame(){
             c.gameSendStart();
-            deal();
+            dealer.Start();
         }
 
         public String getScores()
@@ -112,5 +125,6 @@ namespace CAH
             }
             return scores;
         }
+
     }
 }

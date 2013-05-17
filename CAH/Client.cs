@@ -37,6 +37,7 @@ namespace CAH
         public delegate void StringEventHandler(object sender, String s);
         public event EventHandler recivedWhiteCard, recivedBlackCard, needToFlipCards, recivedDeckCard,gameStart;
         public event StringEventHandler playerAdded;
+        public static readonly int CLIENT_PORT = 2486;
         private Card latest;
         TcpClient server = null;
 
@@ -169,7 +170,7 @@ namespace CAH
             NetworkStream serverStream = server.GetStream();
             byte[] message = new byte[1];
             message[0] = 2;
-            serverStream.Write(message,0,message.Length);
+            serverStream.Write(message, 0, message.Length);
             serverStream.Flush();
             serverStream.Write(encoder.GetBytes(card), 0, encoder.GetBytes(card).Length);
             serverStream.Flush();
